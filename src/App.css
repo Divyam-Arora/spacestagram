@@ -1,0 +1,6 @@
+.app {
+  width: 100%;
+  padding-top: 6rem;
+  max-width: 800px;
+  /* overflow: hidden; */
+}

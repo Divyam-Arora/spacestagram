@@ -1,0 +1,104 @@
+.list_el {
+  width: 100%;
+  background-color: black;
+  color: #aaa;
+  margin-bottom: 1rem;
+  border-radius: 20px;
+}
+
+.list_el h4 {
+  padding: 1rem;
+}
+
+.list_el figure {
+  width: 100%;
+  height: auto;
+}
+
+.list_el figure img {
+  width: 100%;
+  height: auto;
+}
+
+.list_el figure iframe {
+  width: 100%;
+  height: auto;
+  border: none;
+}
+
+.list_el .actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0.5rem;
+}
+
+.list_el .actions button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  margin-right: 1rem;
+  height: 32px;
+}
+
+.list_el .actions .like--active svg path:nth-child(3) {
+  opacity: 1;
+}
+
+.list_el .actions .clicked {
+  animation: click 0.3s forwards;
+}
+
+@keyframes click {
+  25% {
+    transform: scale(0.75);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  75% {
+    transform: scale(1.25);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.list_el .actions p {
+  display: inline-block;
+  height: 100%;
+  color: #aaa;
+  overflow: hidden;
+  background-color: #222;
+  padding: 5px 10px 5px 10px;
+  border-radius: 10px;
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+.list_el .actions .tool_tip {
+  animation: show 0.2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes show {
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.list_el .content {
+  padding: 0.5rem;
+}
+
+.list_el .content h2 {
+  margin-bottom: 1rem;
+}
+
+.list_el .content p {
+  margin-bottom: 1rem;
+}
