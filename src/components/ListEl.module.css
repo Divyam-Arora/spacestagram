@@ -39,6 +39,7 @@
   background-color: transparent;
   margin-right: 1rem;
   height: 32px;
+  cursor: pointer;
 }
 
 .list_el .actions .like--active svg path:nth-child(3) {
