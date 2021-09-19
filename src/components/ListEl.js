@@ -24,7 +24,7 @@ const ListEl = function (props) {
   const humanDate = (date) => {
     const dateObj = new Date(date);
     const today = new Date();
-    const diff = today.UTCgetDate() - dateObj.UTCgetDate();
+    const diff = today.getUTCDate() - dateObj.getUTCDate();
     if (
       diff > 1 ||
       today.getUTCMonth() !== dateObj.getUTCMonth() ||
