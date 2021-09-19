@@ -45,7 +45,7 @@ function App() {
     <main className="app">
       <Header />
       {list && <List list={list} likedList={liked} />}
-      {error && <p>{error}</p>}
+      {error && <p style={{ color: "#aaa", textAlign: "center" }}>{error}</p>}
       {isLoading && <Loader />}
     </main>
   );
