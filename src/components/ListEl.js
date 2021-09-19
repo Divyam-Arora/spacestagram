@@ -115,6 +115,7 @@ const ListEl = function (props) {
       <figure>{mediaEl}</figure>
       <div className={classes.actions}>
         <button
+          aria-label="like"
           onClick={likeClickHandler}
           className={
             (btnCLick ? classes.clicked : "") +
@@ -143,7 +144,7 @@ const ListEl = function (props) {
             />
           </svg>
         </button>
-        <button onClick={linkCopyHandler}>
+        <button aria-label="link" onClick={linkCopyHandler}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="32px"
