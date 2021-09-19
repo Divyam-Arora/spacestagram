@@ -18,7 +18,7 @@ const ListEl = function (props) {
     props.el.media_type === "video" ? (
       <iframe title={props.el.title} src={props.el.url}></iframe>
     ) : (
-      <img src={props.el.url} alt={props.title}></img>
+      <img src={props.el.url} alt={props.el.title}></img>
     );
 
   const humanDate = (date) => {
