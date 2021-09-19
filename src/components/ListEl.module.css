@@ -99,6 +99,11 @@
   margin-bottom: 1rem;
 }
 
-.list_el .content p {
+.list_el .content > p {
   margin-bottom: 1rem;
+}
+
+.list_el .content > p > span {
+  color: white;
+  cursor: pointer;
 }

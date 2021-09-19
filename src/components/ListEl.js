@@ -11,6 +11,7 @@ const ListEl = function (props) {
   const [linkClick, setLinkClick] = useState(false);
   const [likeClick, setLikeClick] = useState(null);
   const [likeFill, setLikeFill] = useState(props.liked);
+  const [moreClick, setMoreClick] = useState(false);
   //   const [justLoaded, setJustLoaded] = useState(true);
   const dispatch = useDispatch();
   const mediaEl =
@@ -19,6 +20,47 @@ const ListEl = function (props) {
     ) : (
       <img src={props.el.url} alt={props.title}></img>
     );
+
+  const humanDate = (date) => {
+    const dateObj = new Date(date);
+    const today = new Date();
+    const diff = today.getDate() - dateObj.getDate();
+    if (
+      diff > 1 ||
+      today.getMonth() !== dateObj.getMonth() ||
+      today.getFullYear() !== dateObj.getFullYear()
+    ) {
+      return new Intl.DateTimeFormat("en-US", {
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+      }).format(new Date(date));
+    } else {
+      if (diff === 1) {
+        return "Yesterday";
+      } else {
+        return "Today";
+      }
+    }
+  };
+
+  const moreExpHandler = () => {
+    setMoreClick(true);
+  };
+
+  const shortexp = (exp) => {
+    const explist = exp.split(" ");
+    if (explist.length < 40) {
+      return <p>explist.join(" ")</p>;
+    } else {
+      return (
+        <p>
+          {explist.slice(0, 40).join(" ")}...
+          <span onClick={moreExpHandler}> more</span>
+        </p>
+      );
+    }
+  };
 
   const linkCopyHandler = function (e) {
     navigator.clipboard.writeText(props.el.url);
@@ -117,8 +159,12 @@ const ListEl = function (props) {
       </div>
       <div className={classes.content}>
         <h2>{props.el.title}</h2>
-        <p>{props.el.explanation}</p>
-        <p>{props.el.date}</p>
+        {moreClick ? (
+          <p>{props.el.explanation}</p>
+        ) : (
+          shortexp(props.el.explanation)
+        )}
+        <p>{humanDate(props.el.date)}</p>
       </div>
     </li>
   );
