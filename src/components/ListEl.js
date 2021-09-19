@@ -24,11 +24,11 @@ const ListEl = function (props) {
   const humanDate = (date) => {
     const dateObj = new Date(date);
     const today = new Date();
-    const diff = today.getDate() - dateObj.getDate();
+    const diff = today.UTCgetDate() - dateObj.UTCgetDate();
     if (
       diff > 1 ||
-      today.getMonth() !== dateObj.getMonth() ||
-      today.getFullYear() !== dateObj.getFullYear()
+      today.getUTCMonth() !== dateObj.getUTCMonth() ||
+      today.getUTCFullYear() !== dateObj.getUTCFullYear()
     ) {
       return new Intl.DateTimeFormat("en-US", {
         day: "numeric",
