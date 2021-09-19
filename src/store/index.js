@@ -1,9 +1,9 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 
 const initialDate = {
-  date: `${new Date().getFullYear()}-${
-    new Date().getMonth() + 1
-  }-${new Date().getDate()}`,
+  date: `${new Date().getUTCFullYear()}-${
+    new Date().getUTCMonth() + 1
+  }-${new Date().getUTCDate()}`,
   count: 10,
 };
 
